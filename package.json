@@ -1,0 +1,45 @@
+{
+  "name": "integreat-transporter-rabbitmq",
+  "version": "0.1.0",
+  "description": "RabbitMQ Transporter for Integreat",
+  "author": "Kjell-Morten Bratsberg Thorsen <kjellmorten@integreat.io>",
+  "license": "ISC",
+  "keywords": [
+    "integreat",
+    "queue",
+    "rabbitmq"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run build && nyc --reporter=text-summary ava --config ./ava-dist.config.js",
+    "test:inspect": "node --inspect node_modules/ava/profile.js",
+    "test:watch": "npm run dev",
+    "dev": "ava --watch",
+    "build": "tsc",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "nyc:report": "nyc report --reporter=text --reporter=html",
+    "lint": "eslint --ext .ts src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/integreat-io/integreat-transporter-rabbitmq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/integreat-io/integreat-transporter-rabbitmq/issues"
+  },
+  "homepage": "https://github.com/integreat-io/integreat-transporter-rabbitmq#readme",
+  "engines": {
+    "node": ">= 14"
+  },
+  "dependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/debug": "^4.1.7",
+    "amqplib": "^0.8.0",
+    "debug": "^4.3.3"
+  },
+  "devDependencies": {
+    "@integreat/ts-dev-setup": "^2.2.0",
+    "@types/sinon": "^10.0.6",
+    "sinon": "^12.0.1"
+  }
+}

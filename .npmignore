@@ -1,0 +1,9 @@
+src/
+coverage/
+dist/tests/
+*.test*
+.*
+tsconfig.json
+*.config.js
+redisdata
+docker-compose.yml
