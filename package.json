@@ -14,6 +14,8 @@
     "test": "npm run lint && npm run build && nyc --reporter=text-summary ava --config ./ava-dist.config.js",
     "test:inspect": "node --inspect node_modules/ava/profile.js",
     "test:watch": "npm run dev",
+    "test:setup": "docker compose up",
+    "test:teardown": "docker compose down",
     "dev": "ava --watch",
     "build": "tsc",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
@@ -34,8 +36,10 @@
   "dependencies": {
     "@types/amqplib": "^0.8.2",
     "@types/debug": "^4.1.7",
+    "@types/nanoid": "^3.0.0",
     "amqplib": "^0.8.0",
-    "debug": "^4.3.3"
+    "debug": "^4.3.3",
+    "nanoid": "^3.1.30"
   },
   "devDependencies": {
     "@integreat/ts-dev-setup": "^2.2.0",
