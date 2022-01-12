@@ -3,7 +3,7 @@ node_js:
   - '14'
   - '16'
 services:
-  - redis-server
+  - rabbitmq
 after_success: npm run coverage
 notifications:
   email:

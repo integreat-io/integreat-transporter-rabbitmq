@@ -1,0 +1,9 @@
+version: '3.1'
+services:
+  redis:
+    image: rabbitmq:3.9-alpine
+    hostname: integreat-transporter-rabbitmq
+    volumes:
+      - ./redisdata:/data
+    ports:
+      - '5672:5672'
